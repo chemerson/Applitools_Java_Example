@@ -19,6 +19,9 @@ public class ApplitoolsTest {
 
         // Change the APPLITOOLS_API_KEY API key with yours
         eyes.setApiKey("<YOUR KEY>");  //Put your API key here
+        // or pull from the environment variable
+        eyes.setApiKey(System.getenv("APPLITOOLS_API_KEY"));
+
 
         ChromeOptions cOptions = new ChromeOptions();
         ChromeDriver driver = new ChromeDriver(cOptions);
