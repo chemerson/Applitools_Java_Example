@@ -1,17 +1,30 @@
 package ApplitoolsExample;
 
-import com.applitools.eyes.*;
-import com.applitools.eyes.selenium.fluent.Target;
+import com.applitools.eyes.EyesRunner;
+import com.applitools.eyes.RectangleSize;
+import com.applitools.eyes.TestResultsSummary;
 import com.applitools.eyes.selenium.ClassicRunner;
 import com.applitools.eyes.selenium.Eyes;
+import com.applitools.eyes.selenium.fluent.Target;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import utils.params;
 
-public class ApplitoolsTest {
+import java.net.MalformedURLException;
+import java.net.URL;
 
-    public static void main(String[] args) {
+public class BrowserStack {
+
+
+    public static final String USERNAME = "<YOUR BROWSERSTACK USERNAME HERE>";
+    public static final String AUTOMATE_KEY = "<AUTOMATE KEY FROM BROWSERSTACK>";
+    public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+
+
+    public static void main(String[] args) throws MalformedURLException {
         // Initialize the Runner for your test.
         EyesRunner runner = new ClassicRunner();
 
@@ -24,8 +37,15 @@ public class ApplitoolsTest {
         eyes.setApiKey(System.getenv("APPLITOOLS_API_KEY"));
 
 
-        ChromeOptions cOptions = new ChromeOptions();
-        ChromeDriver driver = new ChromeDriver(cOptions);
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("browser", "Chrome");
+        caps.setCapability("browser_version", "80.0 beta");
+        caps.setCapability("os", "Windows");
+        caps.setCapability("os_version", "10");
+        caps.setCapability("resolution", "1280x1024");
+        caps.setCapability("name", "Bstack-[Java] Sample Test");
+
+        WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
 
         try {
 
