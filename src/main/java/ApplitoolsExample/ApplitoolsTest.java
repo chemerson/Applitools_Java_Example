@@ -1,6 +1,7 @@
 package ApplitoolsExample;
 
 import com.applitools.eyes.*;
+import com.applitools.eyes.selenium.StitchMode;
 import com.applitools.eyes.selenium.fluent.Target;
 import com.applitools.eyes.selenium.ClassicRunner;
 import com.applitools.eyes.selenium.Eyes;

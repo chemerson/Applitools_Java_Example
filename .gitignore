@@ -25,3 +25,4 @@ hs_err_pid*
 /Visual_Test_Example.iml
 /target/
 /chromedriver
+.DS_Store
