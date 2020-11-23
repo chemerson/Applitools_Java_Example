@@ -1,22 +1,21 @@
 package ApplitoolsExample;
 
-import com.applitools.eyes.*;
-import com.applitools.eyes.selenium.BrowserType;
-import com.applitools.eyes.selenium.Configuration;
-import com.applitools.eyes.selenium.fluent.Target;
+import com.applitools.eyes.EyesRunner;
+import com.applitools.eyes.ProxySettings;
+import com.applitools.eyes.RectangleSize;
+import com.applitools.eyes.TestResultsSummary;
 import com.applitools.eyes.selenium.ClassicRunner;
 import com.applitools.eyes.selenium.Eyes;
-import com.applitools.eyes.visualgrid.services.VisualGridRunner;
+import com.applitools.eyes.selenium.fluent.Target;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 
-public class ApplitoolsTest {
+public class ApplitoolsClassicTest {
 
     public static void main(String[] args) {
         // Initialize the Runner for your test.
-        //EyesRunner runner = new ClassicRunner();
-        EyesRunner runner = new VisualGridRunner(1);
+        EyesRunner runner = new ClassicRunner();
 
         // Initialize the eyes SDK
         Eyes eyes = new Eyes(runner);
@@ -25,17 +24,11 @@ public class ApplitoolsTest {
         eyes.setApiKey("8pVdTA8n6joSM18VHrggfo9OHmhaFjepyAbkdrZ1NcU110");  //Put your API key here
         // or pull from the environment variable
         // eyes.setApiKey(System.getenv(""));
-        //eyes.setProxy(new ProxySettings("http://127.0.0.1:8888"));
+        // eyes.setProxy(new ProxySettings("http://127.0.0.1:8888"));
 
         ChromeOptions cOptions = new ChromeOptions();
         cOptions.setCapability("acceptInsecureCerts", true);
         ChromeDriver driver = new ChromeDriver(cOptions);
-
-        Configuration config = new Configuration();
-        config.addBrowser(1024, 768, BrowserType.CHROME);
-        config.addBrowser(1024, 768, BrowserType.FIREFOX);
-
-        eyes.setConfiguration(config);
 
         try {
 
