@@ -32,8 +32,8 @@ public class ApplitoolsTest {
         ChromeDriver driver = new ChromeDriver(cOptions);
 
         Configuration config = new Configuration();
-        config.addBrowser(1024, 768, BrowserType.CHROME);
-        config.addBrowser(1024, 768, BrowserType.FIREFOX);
+        config.addBrowser(496, 768, BrowserType.CHROME);
+        config.addBrowser(496, 768, BrowserType.FIREFOX);
 
         eyes.setConfiguration(config);
 

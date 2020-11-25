@@ -1,5 +1,6 @@
 package ApplitoolsExample;
 
+/*
 import com.applitools.eyes.EyesRunner;
 import com.applitools.eyes.RectangleSize;
 import com.applitools.eyes.StdoutLogHandler;
@@ -7,7 +8,7 @@ import com.applitools.eyes.TestResultsSummary;
 import com.applitools.eyes.selenium.ClassicRunner;
 import com.applitools.eyes.selenium.Eyes;
 import com.applitools.eyes.selenium.fluent.Target;
-import io.appium.java_client.AppiumDriver;
+//import io.appium.java_client.AppiumDriver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -82,3 +83,4 @@ public class iOS {
 
 
 }
+*/

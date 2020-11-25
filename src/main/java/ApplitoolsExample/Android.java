@@ -1,5 +1,6 @@
 package ApplitoolsExample;
 
+/*
 import com.applitools.eyes.EyesRunner;
 import com.applitools.eyes.RectangleSize;
 import com.applitools.eyes.StdoutLogHandler;
@@ -76,3 +77,5 @@ public class Android {
 
 
 }
+
+ */
