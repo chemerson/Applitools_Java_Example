@@ -14,6 +14,13 @@
     <orderEntry type="library" name="Maven: com.applitools:eyes-sdk-core-java3:3.185.0" level="project" />
     <orderEntry type="library" name="Maven: com.applitools:eyes-ufg-java3:3.185.0" level="project" />
     <orderEntry type="library" name="Maven: com.applitools:eyes-connectivity-java3:3.185.0" level="project" />
+    <orderEntry type="library" name="Maven: com.applitools:eyes-connectivity-java3-jersey2x:3.185.0" level="project" />
+    <orderEntry type="library" name="Maven: com.applitools:eyes-common-java3:3.185.0" level="project" />
+    <orderEntry type="library" name="Maven: com.applitools:eyes-selenium-java3:3.185.0" level="project" />
+    <orderEntry type="library" name="Maven: com.applitools:eyes-selenium-common-java3:3.185.0" level="project" />
+    <orderEntry type="library" name="Maven: com.applitools:eyes-sdk-core-java3:3.185.0" level="project" />
+    <orderEntry type="library" name="Maven: com.applitools:eyes-ufg-java3:3.185.0" level="project" />
+    <orderEntry type="library" name="Maven: com.applitools:eyes-connectivity-java3:3.185.0" level="project" />
     <orderEntry type="library" name="Maven: net.sourceforge.cssparser:cssparser:0.9.27" level="project" />
     <orderEntry type="library" name="Maven: org.w3c.css:sac:1.3" level="project" />
     <orderEntry type="library" name="Maven: com.applitools:eyes-connectivity-java3-jersey2x:3.185.0" level="project" />
