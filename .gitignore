@@ -24,6 +24,3 @@ hs_err_pid*
 .DS_Store
 .idea/
 *.xml
-.idea/libraries/Maven__com_applitools_eyes_ufg_java3_3_198_0.xml
-.idea/libraries/Maven__com_applitools_eyes_selenium_java3_3_198_0.xml
-.idea/libraries/Maven__com_applitools_eyes_ufg_java3_3_198_0.xml
