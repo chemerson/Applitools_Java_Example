@@ -3,6 +3,9 @@ package ApplitoolsExample;
 import com.applitools.eyes.EyesRunner;
 import com.applitools.eyes.RectangleSize;
 import com.applitools.eyes.TestResultsSummary;
+import com.applitools.eyes.locators.TextRegion;
+import com.applitools.eyes.locators.TextRegionSettings;
+import com.applitools.eyes.locators.VisualLocator;
 import com.applitools.eyes.selenium.ClassicRunner;
 import com.applitools.eyes.selenium.Configuration;
 import com.applitools.eyes.selenium.Eyes;
@@ -11,9 +14,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.List;
+import java.util.Map;
 
 
-public class ApplitoolsClassicTest {
+public class ApplitoolsOCR {
 
     public static void main(String[] args) {
         // Initialize the Runner for your test.
@@ -33,10 +38,10 @@ public class ApplitoolsClassicTest {
 
         Configuration config = new Configuration();
         config
-            .setBranchName("Child Branch 2")
+            .setBranchName("OCR")
             .setParentBranchName("Parent Branch 1")
-            .setAppName("Applitools Demo App")
-            .setTestName("Applitools Demo")
+            .setAppName("Applitools OCR")
+            .setTestName("Applitools OCR")
             .setViewportSize(new RectangleSize(1440, 820));
 
         eyes.setConfiguration(config);
@@ -45,19 +50,11 @@ public class ApplitoolsClassicTest {
 
             eyes.open(driver);
 
-            driver.get("http://wikipedia.com");
-            eyes.check("New Step", Target.window().fully().strict());
-            
-            driver.get("http://applitoolsjenkins.eastus.cloudapp.azure.com:5000/demo.html?version=1");
-          //  driver.get("http://applitoolsjenkins.eastus.cloudapp.azure.com:5000/demo.html?version=1&changelogo=true");
+            driver.get("https://www.geico.com/");
 
-            eyes.check("Initial Sign In Page", Target.window().fully().strict());
+            eyes.check("Initial Sign In Page", Target.window().strict());
 
-            driver.findElement(By.cssSelector("#log-in")).click();
-
-            eyes.check("No Username and Password error", Target.window().fully().strict());
-
-
+            System.out.println(extractText(eyes, "W"));
 
             // End the test.
             eyes.close(false);
@@ -76,6 +73,28 @@ public class ApplitoolsClassicTest {
             eyes.abortIfNotClosed();
             driver.quit();
             e.printStackTrace();
+        }
+
+    }
+
+    public static String extractText(Eyes eyes, String search) {
+
+        try {
+            Map<String, List<TextRegion>> textRegions = eyes.extractTextRegions(new TextRegionSettings(search));
+            List<TextRegion> regions = textRegions.get(search);
+
+            TextRegion region = regions.get(0);
+            int rSize = regions.size();
+            String out = "";
+            for(int i = 0 ; i<rSize ; i++){
+                region = regions.get(i);
+                out = out + "Match " + (i+1) + ": " + region.getText() + "\n";
+            }
+
+            return out ;
+
+        } catch (Exception e) {
+            return "extractText: '" + search + "' not found";
         }
 
     }
